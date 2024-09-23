@@ -10,6 +10,6 @@ from datetime import datetime
 uName = input("Enter Name >> ")
 def my_func(name, date):
     print(name, date)
-my_func(name="{}".format(uName), date=datetime.today())
+my_func("{}".format(uName), datetime.today())
 
 
