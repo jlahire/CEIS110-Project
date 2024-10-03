@@ -14,9 +14,22 @@ the next riders from the front of the line).
 Complete the following program, as described above. Once 
 finished, add the following commands:
 
-The rider can enter a name to find the current position in 
+******** The rider can enter a name to find the current position in 
 line. (Hint: Use the list.index() method.)
-The rider can enter a name to remove the rider from the line.
+
+******** The rider can enter a name to remove the rider from the line.
+
+input(s):
+
+1
+Frank
+4
+1
+Bob
+3
+4
+5
+
 '''
 
 riders_per_ride = 3  # Num riders per ride to dispatch
@@ -28,29 +41,47 @@ menu = ('(1) Reserve place in line.\n'  # Add rider to line
         '(2) Reserve place in VIP line.\n'  # Add VIP
         '(3) Dispatch riders.\n'  # Dispatch next ride car
         '(4) Print riders.\n'
-        '(5) Exit.\n\n')
+        '(5) Find rider position.\n'
+        '(6) Remove rider.\n'
+        '(7) Exit.\n\n')
 
 user_input = input(menu).strip().lower()
 
-while user_input != '5':
+while user_input != '7':
     if user_input == '1':  # Add rider 
         name = input('Enter name:').strip().lower()
         print(name)
         line.append(name)
 
     elif user_input == '2':  # Add VIP
-        print('FIXME: Add new VIP')
-        # Add new rider behind last VIP in line
-        # Hint: Insert the VIP into the line at position num_vips.
-        #Don't forget to increment num_vips.
+        name = input('Enter name:').strip().lower()
+        print(name)
+        line.insert(num_vips, name)
+        num_vips += 1
 
     elif user_input == '3':  # Dispatch ride
-        print('FIXME: Remove riders from the front of the line.')
-        # Remove last riders_per_ride from front of line.
-        # Don't forget to decrease num_vips, if necessary.
+        del line[:riders_per_ride]
+        num_vips = max(0, num_vips - riders_per_ride)
+
 
     elif user_input == '4':  # Print riders waiting in line
         print('{} person(s) waiting:'.format(len(line)), line)
+    
+    elif user_input == '5':  # Find rider position in line
+        name = input('Enter rider name:').strip().lower()
+        if name in line:
+            print(f'{name} is at position {line.index(name) +1}.')
+        else:
+            print(f'{name} is not in the line.')
+    
+    elif user_input == '6':  # Remove rider from line
+        name = input('Enter rider name:').strip().lower()
+        if name in line:
+            line.remove(name)
+            num_vips = max(0, num_vips - 1)
+            print(f'{name} removed from line.')
+        else:
+            print(f'{name} not in the line.')
 
     else:
         print('Unknown menu option')
