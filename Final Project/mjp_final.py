@@ -1,16 +1,20 @@
 #Name: Michael Pabst
-#Date: 2024-10-07
+#Date: 2024-10-012
 
 from noaa_sdk import NOAA
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
 
 name = "Michael Pabst"
 print(name)
-startDate = '2024-09-24'
-endDate = '2024-10-07'
+endDate = datetime.now().strftime('%Y-%m-%d')
+startDate = (datetime.now() - timedelta(days=14)).strftime('%Y-%m-%d')
 
-n = NOAA()  # Corrected function name
-observations = n.get_observations('30350', 'us', start=startDate, end=endDate)
+print(f"Start Date: {startDate}")
+print(f"End Date: {endDate}")
+
+n = NOAA() 
+observations = n.get_observations('30120', 'us', start=startDate, end=endDate)
 temp = []
 humidity = []
 
@@ -25,20 +29,20 @@ for obs in observations:
 temp = list(filter(None, temp))  
 humidity = list(filter(None, humidity))   
 
-# Plot Temperature vs Humidity
+# Temp vs Hmdty
 plt.figure()
 plt.plot(temp, label="temperature")
 plt.plot(humidity, label='humidity')
 plt.legend()
-plt.suptitle('Temperature vs Humidity')  # Corrected subtitle to suptitle
-plt.savefig('weather.png')  # Corrected safefig to savefig
+plt.suptitle('Temperature vs Humidity')  
+plt.savefig('weather.png')  
 
 # Box Plot
 plt.figure()
 box_data = [temp, humidity]
-plt.boxplot(box_data, labels=['Temperature', 'Humidity'])
-plt.suptitle('Box Plot')  # Corrected subtitle to suptitle
-plt.savefig('boxplot.png')  # Corrected safefig to savefig
+plt.boxplot(box_data, tick_labels=['Temperature', 'Humidity'])
+plt.suptitle('Box Plot')  
+plt.savefig('boxplot.png')  
 
 avg_temp = sum(temp) / len(temp)
 low_temp = min(temp)
