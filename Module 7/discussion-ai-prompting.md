@@ -1,4 +1,4 @@
-# Hey All,
+# AI Prompt Generation
 
 My interactions with AI are a little different, as I have experimented with it in the past. I have experimented with AI Tools/Agents for a few years now and have a few of my own that I've built, localized, and trained.
 
