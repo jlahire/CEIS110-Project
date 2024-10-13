@@ -78,7 +78,6 @@ Fallbacks and Error Handling:
 
 Prompt Commands:
 ----------------
-Here are some useful prompt commands to help tailor your prompt:
 %USER%: Refers to the user's input.
 %RESPOND%: Provides a tailored response based on user input.
 %LIST%: Generates a list based on user input or specified criteria.
