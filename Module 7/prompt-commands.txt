@@ -1,0 +1,36 @@
+%USER%: Refers to the user's input.
+%RESPOND%: Provides a tailored response based on user input.
+%LIST%: Generates a list based on user input or specified criteria.
+%EXAMPLE%: Provides examples to clarify instructions or responses.
+%LIMITATIONS%: Defines the limitations or boundaries for agent.
+%PERSONALITY%: Sets the tone and personality of the agent.
+%FALLBACK%: Specifies fallback actions if the agent cannot fulfill a request.
+%TOOLS%: Describes tools or capabilities the agent can utilize.
+%ROLE%: Defines the role and responsibilities of the agent.
+%GOAL%: Describes the goal of the agent in the interaction.
+%TONE%: Specifies the desired tone (friendly, professional, casual, etc.).
+%CONTEXT%: Sets the context for the agent's responses.
+%EXCEPTION%: Provides instructions for handling exceptions or errors.
+%CONFIRMATION%: Includes a confirmation step to verify the user's intent or input.
+%INSTRUCTION%: Delivers specific step-by-step instructions for tasks.
+%CHECK%: Incorporates a check to validate user input or conditions.
+%SUMMARY%: Summarizes the information or responses provided.
+%DETAIL%: Provides additional details or explanations.
+%FEEDBACK%: Requests or incorporates feedback from the user.
+%REQUEST%: Makes a specific request to the user.
+%ACKNOWLEDGE%: Acknowledges user input or feedback.
+%COMPARE%: Compares different options or scenarios.
+%RECOMMENDATION%: Provides a recommendation based on user input.
+%REMINDER%: Reminds the user of previous steps or information.
+%NOTE%: Adds a note or important information.
+%WARN%: Issues a warning or caution about an action.
+%PROMPT%: Prompts the user for further input or action.
+%DETAILS%: Requests additional details from the user.
+%STATUS%: Provides a status update on an ongoing process.
+%EXPLANATION%: Gives an explanation for a specific action or response.
+%UPDATE%: Updates the user on changes or new information.
+%SUGGESTION%: Offers a suggestion based on the current context.
+%INQUIRY%: Inquires further to gather more information from the user.
+%VERIFY%: Verifies the accuracy or correctness of information.
+%APPRECIATION%: Expresses appreciation or gratitude to the user.
+%MOTIVATE%: Provides motivation or encouragement to the user.
